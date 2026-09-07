@@ -1,0 +1,22 @@
+{
+  "name": "StealASkybox",
+  "tree": {
+    "$className": "DataModel",
+    "Workspace": {
+      "$className": "Workspace",
+      "$path": "src/Workspace"
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "$path": "src/ServerScriptService"
+    },
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "$path": "src/ReplicatedStorage"
+    },
+    "StarterGui": {
+      "$className": "StarterGui",
+      "$path": "src/StarterGUI"
+    }
+  }
+}
