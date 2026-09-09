@@ -1,0 +1,21 @@
+{
+    "name": "Tiny10 on KVM (Codespaces)",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+    "forwardPorts": [8006],
+    "portsAttributes": {
+        "8006": {
+            "label": "Tiny10 Desktop",
+            "onAutoForward": "openBrowser"
+        }
+    },
+    "onCreateCommand": "sudo apt-get update && sudo apt-get install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils cpu-checker && sudo kvm-ok",
+    "postCreateCommand": "sudo docker run -d -p 8006:8006 --name tiny10 --restart unless-stopped --device=/dev/kvm -v ${PWD}/oem:/oem -e VERSION=\"tiny10\" -e RESOLUTION=\"1366x768\" docker.io/dockurr/windows",
+    "shutdownAction": "stopContainer",
+    "containerEnv": {
+        "WIN_VERSION": "tiny10",
+        "WIN_RESOLUTION": "1366x768"
+    }
+}
