@@ -1,0 +1,14 @@
+version: '3'
+services:
+  windows:
+    image: dockurr/windows:latest
+    container_name: tiny10_space
+    privileged: true
+    environment:
+      VERSION: "custom"
+      RESOLUTION: "1366x768"
+    ports:
+      - "8006:8006"
+    volumes:
+      - ./oem:/oem
+    restart: unless-stopped
