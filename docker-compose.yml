@@ -5,10 +5,9 @@ services:
     container_name: tiny10_space
     privileged: true
     environment:
-      VERSION: "/oem/tiny10.iso"
+      # Прямая ссылка на Tiny10 21H2 x64
+      VERSION: "https://archive.org/download/tiny-10-21h2-x64-2209/tiny10%2021H2%20x64%202209.iso"
       RESOLUTION: "1366x768"
     ports:
       - "8006:8006"
-    volumes:
-      - ./oem:/oem
     restart: unless-stopped
